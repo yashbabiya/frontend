@@ -37,7 +37,8 @@ export default function AddProduct() {
           <div className='avatarWrap'>
             
             <p>Image :</p>
-            <img src={preview || ""} className="avatar" alt="" />
+            {!preview ? <div className='avatar'></div>: <img src={preview || ""} className="avatar" alt="" />}
+
             
             <label for='avatarimg' className='blue'><i className='im im-cloud-upload'></i></label>
             <input id="avatarimg" type="file" onChange={(e)=>handleFile(e)}/>

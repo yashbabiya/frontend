@@ -38,11 +38,15 @@
 .addproduct .form .avatar {
   background-color: rgb(30, 30, 30);
   min-height: 600px;
-  margin-bottom: -10px;
+  margin-bottom: 0px;
+  border-radius: 1em;
 }
 .addproduct .form .right,
 .addproduct .form .left {
   width: 100%;
+}
+.addproduct .form .right .rentInp {
+  gap: 1em;
 }
 .addproduct .form .right .category, .addproduct .form .right .rent {
   max-width: 40rem;
@@ -81,6 +85,53 @@
   display: none;
 }
 
+.editProfile h2 {
+  text-align: left;
+}
+.editProfile .avatar {
+  background-color: rgb(30, 30, 30);
+  min-height: 400px;
+  max-width: 400px;
+  border-radius: 50% !important;
+}
+.editProfile .form {
+  margin: 2em 0;
+}
+.editProfile .bottom {
+  margin-top: 2em;
+}
+.editProfile .avatarWrap {
+  min-height: 400px;
+  max-width: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100% !important;
+}
+.editProfile .avatarWrap img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.editProfile .avatarWrap label {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 1em 1.2em;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.editProfile .avatarWrap label i {
+  font-size: 2.5rem;
+}
+.editProfile .avatarWrap input {
+  display: none;
+}
+
 .home .top {
   min-height: 70vh;
   border-radius: 1em;
@@ -91,6 +142,7 @@
   text-align: center;
   line-height: 7.2rem;
   color: white;
+  text-shadow: 0px 0px 100px rgb(58, 58, 58);
 }
 .home .hero {
   background-size: cover;
@@ -121,6 +173,23 @@
 }
 .home .card p {
   text-align: center;
+}
+
+.queries .wrapper {
+  display: flex;
+  position: relative;
+}
+.queries .wrapper .left, .queries .wrapper .right {
+  width: 100%;
+}
+.queries .form {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+}
+.queries .right .Qcard {
+  height: 20em;
+  background-color: aqua;
 }
 
 .login {
@@ -194,7 +263,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  outline: blueviolet 1px solid;
 }
 
 body {
