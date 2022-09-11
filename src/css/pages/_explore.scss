@@ -25,5 +25,14 @@
     gap:1em;
 }
 
+.listProduct{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
   
 }

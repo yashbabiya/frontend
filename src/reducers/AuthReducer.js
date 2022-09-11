@@ -1,5 +1,8 @@
+import Cookies from "js-cookie"
+
 const initialState = {
-    isLoggedIn : true
+    isLoggedIn : !!Cookies.get("rentit"),
+    ...JSON.parse(localStorage.getItem("userData") || "{}")
 }
 
 const AuthReducer = (state=initialState,action) =>{
@@ -7,11 +10,16 @@ const AuthReducer = (state=initialState,action) =>{
 
 
         case "LOGIN":
-            state.isLoggedIn = true
+            state = {
+                isLoggedIn:true,
+                ...action.payload
+            }
+            localStorage.setItem("userData",JSON.stringify(state))
             return state
 
         case "LOGOUT":
-            state.isLoggedIn = false
+            localStorage.removeItem("userData")
+            state = initialState
             return state
 
         default:

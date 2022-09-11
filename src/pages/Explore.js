@@ -1,6 +1,8 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
-
+import {API} from '../API'
+import ProductCard from '../components/ProductCard';
 export default function Explore() {
 
 
@@ -12,6 +14,22 @@ const options = [
 
 ]
 
+const [products,setProducts] = useState([])
+
+const fetchProducts = async() =>{
+  try{
+
+    const res = await axios.get(API+'/product/findall')
+    setProducts(res.data);
+  }
+  catch(e){
+
+  }
+
+}
+useEffect(()=>{
+  fetchProducts()
+},[])
 
 
   return (
@@ -21,11 +39,21 @@ const options = [
 
         <div className="search">
           <input type="text" />
-          <button><i className="im im-magnifier"></i></button>
+          <button className="green"><i className="im im-magnifier"></i></button>
         </div>
         
 
         <Select className="select" options={options} isMulti/>
+      </div>
+
+      <div className="listProduct">{
+        products.map(product => <>
+        <ProductCard {...product} />
+        </>
+        )
+        
+      }
+        
       </div>
     </div>
   );

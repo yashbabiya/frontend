@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SendEmail from './pages/SendEmail';
 import ChangePassword from './pages/ChangePassword';
+import Product from './pages/product';
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -22,6 +23,8 @@ function App() {
 
       <Route exact path="/" element={<><Header /><Home /><Footer /></>} />
       <Route exact path="/explore" element={<><Header /><Explore /><Footer /></>} />
+      <Route exact path="/product/:id" element={<><Header /><Product /><Footer /></>} />
+
         
         {auth.isLoggedIn ? (
           <>

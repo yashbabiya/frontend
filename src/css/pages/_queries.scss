@@ -1,16 +1,23 @@
 .queries{
+    position: relative;
+
     .wrapper{
         display: flex;
-        position: relative;
         .left,.right{
             width: 100%;
         }
+        .form{
+            position: sticky;
+            top: 10em;
+            height: fit-content;
+        }
     }
 
-      .form{
+    h2{
         position: sticky;
-        top: 2em;
+        position: -webkit-sticky;
     }
+
     .right{
         .Qcard{
             height: 20em;

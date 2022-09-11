@@ -31,6 +31,25 @@
   gap: 3em;
 }
 
+.prodCard {
+  min-width: 200px;
+  max-width: 500px;
+  width: 100%;
+  padding: 1em;
+  border-radius: 1em;
+}
+.prodCard img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1em;
+}
+.prodCard h3, .prodCard p {
+  width: 100%;
+  text-align: center;
+}
+
 .addproduct .form {
   width: 100%;
   margin: 2em 0;
@@ -175,17 +194,26 @@
   text-align: center;
 }
 
+.queries {
+  position: relative;
+}
 .queries .wrapper {
   display: flex;
-  position: relative;
 }
 .queries .wrapper .left, .queries .wrapper .right {
   width: 100%;
 }
-.queries .form {
+.queries .wrapper .form {
   position: -webkit-sticky;
   position: sticky;
-  top: 2em;
+  top: 10em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.queries h2 {
+  position: sticky;
+  position: -webkit-sticky;
 }
 .queries .right .Qcard {
   height: 20em;
@@ -235,6 +263,11 @@
   width: 15em;
 }
 
+.sendemail {
+  min-height: 100vh;
+  width: 100%;
+}
+
 .explore .top {
   width: 100%;
 }
@@ -257,12 +290,63 @@
   display: flex;
   gap: 1em;
 }
+.explore .listProduct {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.productpage .top {
+  width: 100%;
+  display: flex;
+  margin-bottom: 3em;
+}
+.productpage .top .left,
+.productpage .top .right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.productpage .top .left img,
+.productpage .top .right img {
+  width: 100%;
+}
+.productpage .top .left .inRight,
+.productpage .top .right .inRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.productpage .top .left .inRight p,
+.productpage .top .right .inRight p {
+  text-align: left;
+  width: 100%;
+}
+.productpage .prouctdetails {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+}
+.productpage .prouctdetails .one {
+  width: 100%;
+  max-width: 30rem;
+}
+.productpage .ownerdetails {
+  margin-bottom: 3em;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  outline: blueviolet 1px solid;
 }
 
 body {

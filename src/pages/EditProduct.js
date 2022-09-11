@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Select from "react-select";
 
-export default function AddProduct() {
+export default function EditProduct() {
 
   const [img,setImg] = useState();
   const [preview,setPreview] = useState();
-  const [name , setname] = useState();
-  const [description , setdescription] = useState();
-  const [category , setcategory] = useState();
-  const [rent , setrent] = useState();
-  const [timeduration , settimeduration] = useState();
-  const [dop , setdop] = useState();
-
-
 
   const options = [
     { value: 'MachanicalTools', label: 'Machanical Tools' },
@@ -56,11 +48,11 @@ export default function AddProduct() {
         <div className="right">
           <div className="title">
             <p>Name : </p>
-            <input type="text" value={name} onChange={(e)=>setname(e.target.value)} />
+            <input type="text" />
           </div>
           <div className="description">
             <p>Description : </p>
-            <textarea type="text" rows={5} value={description} onChange={(e)=>setdescription(e.target.value)} ></textarea>
+            <textarea type="text" rows={5}></textarea>
           </div>
 
           <div className="category">
@@ -73,7 +65,7 @@ export default function AddProduct() {
             <p>Rent : </p>
             <div className='rentInp'>
               
-              <input type="number" value={rent} onChange={(e)=>setrent(e.target.value)}  ></input>
+              <input type="number" ></input>
               <select name="per" className='yellow' id="">
                   <option value="Per Day">Per Day</option>
                   <option value="Per Month">Per Month</option>
@@ -86,7 +78,7 @@ export default function AddProduct() {
 
           <div className="title">
             <p>Date of Purchase : </p>
-            <input type="date" value={dop} onChange={(e)=>setdop(e.target.value)}  />
+            <input type="date" />
           </div>
 
 
