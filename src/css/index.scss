@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
+@import './components/_button.scss';
+@import './components/_footer.scss';
+@import './components/_header.scss';
+@import './components/_input.scss';
+@import './components/_logo.scss';
+
+@import './pages/_addProduct.scss';
+@import './pages/_editProfile.scss';
+@import './pages/_home.scss';
+@import './pages/_myTools.scss';
+@import './pages/_queries.scss';
+@import './pages/_signup.scss';
+@import './pages/_login.scss';
+
+$lblue :#7AACDC;
+$dblue : #05396B;
+
+$lyellow :#F3E0D2;
+$dyellow : #C28949;
+
+$lgreen :#D5F3D2;
+$dgreen : #53C249;
+
+$lred :#EE8888;
+$dred : #BB0303;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,h2,h3,h4{
+    font-weight: bolder;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+.flex-bet{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+
+}
+.flex-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+p,div{
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.page{
+    padding: 2em;
+    min-height: 80vh;
+}
+.padd{
+    padding: 2em;
+
+}
+
+button {
+    padding: 1em 2em;
+    border-radius: 1em;
+    border:none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled{
+    background-color: gray !important;
+    color:black !important;
+    cursor: not-allowed;
+}
+
+.blue{
+    background-color: $lblue;
+    color:$dblue;
+}
