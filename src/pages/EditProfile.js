@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import  Cookies  from 'js-cookie';
 import { useSelector } from 'react-redux';
+import { API } from "../API";
+import axios from "axios";
+import firebaseUpload from '../helpers/firbaseUpload';
 
 export default function EditProfile() {
   const [img, setImg] = useState();
@@ -12,7 +15,6 @@ export default function EditProfile() {
   const [email,setEmail] = useState();
   const [city,setCity] = useState();
   const [mobile,setMobile] = useState();
-
 
 
   const dispatch = useDispatch()
@@ -46,9 +48,45 @@ export default function EditProfile() {
     
   }
 
+
+  const updateUser = async(img=preview) =>{
+
+    const reqData = {
+      username,
+      email,
+      mobile,
+      location:city,
+      avatar:img
+
+    }
+    const res = await axios.put(API+`/user/${user._id}`,reqData,{withCredentials:true}).catch((err)=>alert("error"))
+
+    if(res.status === 200){
+      logout()
+    }
+
+  }
+  const handleSubmit = () =>{
+
+    if(img){
+
+      firebaseUpload(img,user._id,(img)=>{
+        updateUser(img.data)
+      })
+    }
+    else{
+      updateUser(preview)
+    }
+    
+    
+
+  }
+
   useEffect(() => {
     fileSelect();
   }, [img]);
+
+
 
   return (
     <div className="editProfile page">
@@ -99,7 +137,7 @@ export default function EditProfile() {
       </div>
 
       <div className="flex">
-        <button className="blue">Edit Profile</button>
+        <button className="blue" onClick={handleSubmit}>Edit Profile</button>
       </div>
     </div>
   );

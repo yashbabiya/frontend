@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import {  useParams } from 'react-router-dom'
+import {  useNavigate, useParams } from 'react-router-dom'
 import { API } from '../API';
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 
 export default function Product() {
 
 
   let {id} = useParams();
-
+  const user = useSelector((state)=>state.auth)
+  const navigate = useNavigate();
   
 
   const [product,setProduct] = useState();
@@ -45,6 +47,8 @@ export default function Product() {
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
             </div>
+
+            {(product.renterid === user._id) && <button className='blue' onClick={()=>navigate('/editProduct',{state:product})}>Edit Product</button>}
 
             </div>
         </div>

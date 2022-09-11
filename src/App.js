@@ -12,7 +12,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SendEmail from './pages/SendEmail';
 import ChangePassword from './pages/ChangePassword';
-import Product from './pages/product';
+import Product from './pages/Product';
+import EditProduct from './pages/EditProduct';
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -31,6 +32,8 @@ function App() {
             <Route exact path="/mytools" element={<><Header /><MyTools /><Footer /></>} />
             <Route exact path="/addProduct" element={<><Header /><AddProduct /><Footer /></>} />
             <Route exact path="/editProfile" element={<><Header /><EditProfile /><Footer /></>} />
+            <Route exact path="/editProduct" element={<><Header /><EditProduct /><Footer /></>} />
+
             <Route exact path="/queries" element={<><Header /><Queries /><Footer /></>} />
             
             
