@@ -37,7 +37,7 @@ $dred : #BB0303;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
-    // outline: blueviolet 1px solid;
+    outline: blueviolet 1px solid;
 }
 
 
@@ -48,6 +48,11 @@ body{
 h1,h2,h3,h4{
     font-weight: bolder;
 }
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    width: 100%;
+  }
 
 .flex{
     display: flex;
@@ -106,14 +111,21 @@ button:disabled{
     color:black !important;
     cursor: not-allowed;
 }
-input{
+input,textarea,select{
     padding: 1em 1.2em;
     font-size: 1em;
     border-radius: 1em;
     border:5px solid gray;
     outline: none;
+    width: 100%;
+    max-width: 40rem;
 }
-input:focus{
+select{
+    width: unset;
+    border: none;
+}
+
+input:focus ,textarea:focus{
     border: 5px solid $dblue;
     
 }

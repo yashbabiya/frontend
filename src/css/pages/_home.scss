@@ -3,12 +3,17 @@
         min-height: 70vh;
         // background: #000;
         border-radius: 1em;
+    
         h1{
             font-size: 7rem;
             max-width: 15ch;
             text-align: center;
             line-height: 7.2rem;
+            color: white;
         }
+    }
+    .hero{
+        background-size: cover;
     }
 
     h2{

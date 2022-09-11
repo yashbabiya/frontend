@@ -31,6 +31,56 @@
   gap: 3em;
 }
 
+.addproduct .form {
+  width: 100%;
+  margin: 2em 0;
+}
+.addproduct .form .avatar {
+  background-color: rgb(30, 30, 30);
+  min-height: 600px;
+  margin-bottom: -10px;
+}
+.addproduct .form .right,
+.addproduct .form .left {
+  width: 100%;
+}
+.addproduct .form .right .category, .addproduct .form .right .rent {
+  max-width: 40rem;
+}
+.addproduct .form .right .category .rentInp, .addproduct .form .right .rent .rentInp {
+  display: flex;
+}
+.addproduct .form .avatarWrap {
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  width: 100% !important;
+}
+.addproduct .form .avatarWrap img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+.addproduct .form .avatarWrap label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 1em 1.2em;
+  border-radius: 1em;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.addproduct .form .avatarWrap label i {
+  font-size: 2.5rem;
+}
+.addproduct .form .avatarWrap input {
+  display: none;
+}
+
 .home .top {
   min-height: 70vh;
   border-radius: 1em;
@@ -40,6 +90,10 @@
   max-width: 15ch;
   text-align: center;
   line-height: 7.2rem;
+  color: white;
+}
+.home .hero {
+  background-size: cover;
 }
 .home h2 {
   text-align: center;
@@ -76,11 +130,25 @@
   flex-grow: 1;
   width: 100%;
 }
-.login .form {
-  gap: 1em;
+.login .left .btns {
   width: 100%;
 }
+.login .left .btns button {
+  background: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.login .form {
+  width: 100%;
+}
+.login .form div {
+  gap: 1em;
+}
 .login .form .fgtp {
+  text-align: right;
   width: 100%;
   color: #C28949;
 }
@@ -89,6 +157,9 @@
   background: linear-gradient(90deg, rgb(83, 194, 73) 0%, rgb(122, 172, 220) 100%);
 }
 .login .right h1 {
+  text-align: center;
+}
+.login .right p {
   text-align: center;
 }
 .login .img {
@@ -123,6 +194,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  outline: blueviolet 1px solid;
 }
 
 body {
@@ -131,6 +203,12 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: bolder;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
 }
 
 .flex {
@@ -192,15 +270,22 @@ button:disabled {
   cursor: not-allowed;
 }
 
-input {
+input, textarea, select {
   padding: 1em 1.2em;
   font-size: 1em;
   border-radius: 1em;
   border: 5px solid gray;
   outline: none;
+  width: 100%;
+  max-width: 40rem;
 }
 
-input:focus {
+select {
+  width: unset;
+  border: none;
+}
+
+input:focus, textarea:focus {
   border: 5px solid #05396B;
 }
 

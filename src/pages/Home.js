@@ -1,11 +1,11 @@
 import React from 'react'
-
+import Hero from '../imgs/hero.png'
 export default function Home() {
   return (
     <div className='page home'>
-      <div className="top flex-col ">
+      <div className="top flex-col hero" style={{backgroundImage: `url(${Hero})`}}>
           <h1>
-            Get The Good that You need
+            Get The Goods that You need
           </h1>
           <button className='blue'>
             Explore Now

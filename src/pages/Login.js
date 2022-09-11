@@ -8,18 +8,20 @@ export default function Login() {
       <div className="left flex-col">
         <Logo />
         <div className="form flex-col">
-          <div>
-            <p>Username : </p>
-            <input type="text" />
+          <div className="flex-col">
+            <div>
+              <p>Username : </p>
+              <input type="text" />
+            </div>
+            
+            <div>
+              <p>Password : </p>
+              <input type="password" />
+            </div>
+            
+            <Link to="/sendemail" className="fgtp">Forgot password</Link>
+            <button className="blue">Login</button>
           </div>
-
-          <div>
-            <p>Password : </p>
-            <input type="password" />
-          </div>
-
-          <Link to="/sendemail" className="fgtp">Forgot password</Link>
-          <button className="blue">Login</button>
           <Link to="/signup">Create a new account</Link>
 
         </div>
