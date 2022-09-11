@@ -10,4 +10,33 @@
             line-height: 7.2rem;
         }
     }
+
+    h2{
+        text-align: center;
+        font-size: 3em;
+        margin: 2em 0;
+    }
+
+    .why,.how{
+        margin-top: 5em;
+        flex-wrap: wrap;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        border-radius: 1em;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        min-width: 15em;
+        width: 30%;
+        flex-grow: 1;
+        i{
+            font-size: 5em;
+        }
+        p{
+            text-align: center;
+        }
+    }
 }

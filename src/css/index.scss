@@ -1,3 +1,15 @@
+$lblue :#7AACDC;
+$dblue : #05396B;
+
+$lyellow :#F3E0D2;
+$dyellow : #C28949;
+
+$lgreen :#D5F3D2;
+$dgreen : #53C249;
+
+$lred :#EE8888;
+$dred : #BB0303;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
 @import './components/_button.scss';
 @import './components/_footer.scss';
@@ -12,18 +24,10 @@
 @import './pages/_queries.scss';
 @import './pages/_signup.scss';
 @import './pages/_login.scss';
+@import './pages/_explore.scss';
 
-$lblue :#7AACDC;
-$dblue : #05396B;
 
-$lyellow :#F3E0D2;
-$dyellow : #C28949;
 
-$lgreen :#D5F3D2;
-$dgreen : #53C249;
-
-$lred :#EE8888;
-$dred : #BB0303;
 
 
 
@@ -33,7 +37,7 @@ $dred : #BB0303;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
-    
+    // outline: blueviolet 1px solid;
 }
 
 
@@ -102,8 +106,32 @@ button:disabled{
     color:black !important;
     cursor: not-allowed;
 }
-
+input{
+    padding: 1em 1.2em;
+    font-size: 1em;
+    border-radius: 1em;
+    border:5px solid gray;
+    outline: none;
+}
+input:focus{
+    border: 5px solid $dblue;
+    
+}
 .blue{
     background-color: $lblue;
     color:$dblue;
+}
+
+.green{
+    background-color: $lgreen;
+    color:$dgreen;
+}
+
+.yellow{
+    background-color: $lyellow;
+    color:$dyellow;
+}
+.red{
+    background-color: $lred;
+    color:$dred;
 }

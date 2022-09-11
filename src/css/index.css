@@ -41,6 +41,82 @@
   text-align: center;
   line-height: 7.2rem;
 }
+.home h2 {
+  text-align: center;
+  font-size: 3em;
+  margin: 2em 0;
+}
+.home .why, .home .how {
+  margin-top: 5em;
+  flex-wrap: wrap;
+}
+.home .card {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  border-radius: 1em;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  min-width: 15em;
+  width: 30%;
+  flex-grow: 1;
+}
+.home .card i {
+  font-size: 5em;
+}
+.home .card p {
+  text-align: center;
+}
+
+.login {
+  min-height: 100vh !important;
+}
+.login .left, .login .right {
+  flex-grow: 1;
+  width: 100%;
+}
+.login .form {
+  gap: 1em;
+  width: 100%;
+}
+.login .form .fgtp {
+  width: 100%;
+  color: #C28949;
+}
+.login .right {
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgb(83, 194, 73) 0%, rgb(122, 172, 220) 100%);
+}
+.login .right h1 {
+  text-align: center;
+}
+.login .img {
+  width: 15em;
+}
+
+.explore .top {
+  width: 100%;
+}
+.explore h2 {
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
+}
+.explore .select {
+  width: 100%;
+  max-width: 20em;
+  font-size: 1em;
+}
+.explore .css-1s2u09g-control {
+  border: 5px solid gray;
+  border-radius: 0.5em;
+  outline: none;
+}
+.explore .search {
+  display: flex;
+  gap: 1em;
+}
 
 * {
   margin: 0;
@@ -116,7 +192,34 @@ button:disabled {
   cursor: not-allowed;
 }
 
+input {
+  padding: 1em 1.2em;
+  font-size: 1em;
+  border-radius: 1em;
+  border: 5px solid gray;
+  outline: none;
+}
+
+input:focus {
+  border: 5px solid #05396B;
+}
+
 .blue {
   background-color: #7AACDC;
   color: #05396B;
+}
+
+.green {
+  background-color: #D5F3D2;
+  color: #53C249;
+}
+
+.yellow {
+  background-color: #F3E0D2;
+  color: #C28949;
+}
+
+.red {
+  background-color: #EE8888;
+  color: #BB0303;
 }/*# sourceMappingURL=index.css.map */
