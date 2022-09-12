@@ -281,11 +281,6 @@
   max-width: 20em;
   font-size: 1em;
 }
-.explore .css-1s2u09g-control {
-  border: 5px solid gray;
-  border-radius: 0.5em;
-  outline: none;
-}
 .explore .search {
   display: flex;
   gap: 1em;
@@ -341,12 +336,43 @@
   margin-bottom: 3em;
 }
 
+.assignproductpage .form {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 2em;
+  width: 100%;
+  max-width: 500px;
+}
+.assignproductpage .form .inp {
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   outline: blueviolet 1px solid;
+}
+
+.logo {
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  transition: 0.4s ease-in-out;
+}
+.logo:hover img {
+  scale: 1.5;
+  transform: rotateZ(360deg);
+}
+
+.logoimg {
+  width: 50px;
+  height: 60px;
 }
 
 body {
@@ -381,7 +407,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 2em;
   flex-direction: column;
 }
 
@@ -409,7 +435,7 @@ a {
 
 button {
   padding: 1em 2em;
-  border-radius: 1em;
+  border-radius: 0.7em;
   border: none;
   font-size: 1.1em;
   font-weight: bold;
@@ -430,6 +456,13 @@ input, textarea, select {
   outline: none;
   width: 100%;
   max-width: 40rem;
+}
+
+.css-1s2u09g-control {
+  border: 5px solid gray !important;
+  padding: 1em 1.2em;
+  border-radius: 1em !important;
+  outline: none !important;
 }
 
 select {
@@ -459,4 +492,8 @@ input:focus, textarea:focus {
 .red {
   background-color: #EE8888;
   color: #BB0303;
+}
+
+.errorPage {
+  height: 100vh !important;
 }/*# sourceMappingURL=index.css.map */

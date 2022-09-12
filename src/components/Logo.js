@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import LogoImg from '../imgs/logo.png';
 export default function Logo() {
   return (
-    <Link to='/'><h1>RentIT</h1></Link>
+    <Link to='/' className='logo'><img src={LogoImg} className='logoimg'/><h1>Rent It</h1></Link>
   )
 }

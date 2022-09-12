@@ -14,6 +14,8 @@ import SendEmail from './pages/SendEmail';
 import ChangePassword from './pages/ChangePassword';
 import Product from './pages/Product';
 import EditProduct from './pages/EditProduct';
+import ErrorPage from "./pages/404";
+import AssignProduct from './pages/AssignProduct';
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -35,6 +37,8 @@ function App() {
             <Route exact path="/editProduct" element={<><Header /><EditProduct /><Footer /></>} />
 
             <Route exact path="/queries" element={<><Header /><Queries /><Footer /></>} />
+            <Route exact path="/assignproduct" element={<><Header /><AssignProduct /><Footer /></>} />
+
             
             
           </>
@@ -48,7 +52,7 @@ function App() {
           </>
         )}
 
-        <Route path='*' element={<h1>404</h1>}/>
+        <Route path='*' element={<ErrorPage />}/>
       </Routes>
     </div>
   );

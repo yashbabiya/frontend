@@ -28,6 +28,7 @@ $dred : #BB0303;
 @import './pages/_login.scss';
 @import './pages/_explore.scss';
 @import './pages/productpage';
+@import './pages/assignProduct';
 
 
 
@@ -41,6 +42,28 @@ $dred : #BB0303;
     font-family: 'Poppins', sans-serif;
 
     outline: blueviolet 1px solid;
+}
+.logo{
+    display: flex;
+    gap: .3em;
+    align-items: center;
+    justify-content: center;
+    img{
+        transition: .4s ease-in-out;
+    }
+    &:hover{
+        img{
+            scale: 1.5;
+            transform: rotateZ(360deg);
+        }
+    }
+}
+
+
+
+.logoimg{
+    width: 50px;
+    height: 60px;
 }
 
 
@@ -75,7 +98,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 2em;
     flex-direction: column;
 }
 
@@ -103,12 +126,14 @@ a{
 
 button {
     padding: 1em 2em;
-    border-radius: 1em;
+    border-radius: .7em;
     border:none;
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
 }
+
+
 
 button:disabled{
     background-color: gray !important;
@@ -124,6 +149,16 @@ input,textarea,select{
     width: 100%;
     max-width: 40rem;
 }
+
+.css-1s2u09g-control{
+    border:5px solid gray !important;
+    padding: 1em 1.2em;
+
+    border-radius: 1em !important;
+    outline: none !important;
+  }
+
+  
 select{
     width: unset;
     border: none;
@@ -150,4 +185,8 @@ input:focus ,textarea:focus{
 .red{
     background-color: $lred;
     color:$dred;
+}
+
+.errorPage{
+    height: 100vh !important;
 }
