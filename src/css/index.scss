@@ -32,7 +32,10 @@ $dred : #BB0303;
 
 
 
-
+html
+{
+    font-size: 80%;
+}
 
 
 *{
@@ -41,7 +44,7 @@ $dred : #BB0303;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
-    outline: blueviolet 1px solid;
+    // outline: blue 1px solid;
 }
 .logo{
     display: flex;
@@ -49,7 +52,7 @@ $dred : #BB0303;
     align-items: center;
     justify-content: center;
     img{
-        transition: .4s ease-in-out;
+        transition: .2s linear;
     }
     &:hover{
         img{
@@ -63,7 +66,7 @@ $dred : #BB0303;
 
 .logoimg{
     width: 50px;
-    height: 60px;
+    // height: 60px;
 }
 
 
@@ -150,13 +153,13 @@ input,textarea,select{
     max-width: 40rem;
 }
 
+
 .css-1s2u09g-control{
     border:5px solid gray !important;
     padding: 1em 1.2em;
-
     border-radius: 1em !important;
     outline: none !important;
-  }
+}
 
   
 select{
@@ -189,4 +192,48 @@ input:focus ,textarea:focus{
 
 .errorPage{
     height: 100vh !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+#partitioned {
+  padding-left: 15px;
+  letter-spacing: 42px;
+  border: 0;
+  background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 50px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 220px;
+  min-width: 220px;
+}
+
+#divInner{
+  left: 0;
+  position: sticky;
+}
+
+#divOuter{
+  width: 190px; 
+  overflow: hidden;
+}
+.otpinputs{
+    margin-top: 5em !important;
+}
+
+.fullpage{
+    min-height: 100vh;
+    
 }

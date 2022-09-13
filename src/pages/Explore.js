@@ -39,7 +39,7 @@ useEffect(()=>{
 
         <div className="search">
           <input type="text" />
-          <button className="green"><i className="im im-magnifier"></i></button>
+          <button className="green roundBtn"><i className="im im-magnifier"></i></button>
         </div>
         
 

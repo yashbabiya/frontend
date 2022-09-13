@@ -28,7 +28,16 @@
 }
 .header .mid {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 3em;
+}
+.header .profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .prodCard {
@@ -112,6 +121,35 @@
   min-height: 400px;
   max-width: 400px;
   border-radius: 50% !important;
+}
+.editProfile .p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+.editProfile .isVerified {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+}
+.editProfile .isVerified i {
+  font-size: 1em;
+}
+.editProfile .title {
+  margin: 1em 0;
+}
+.editProfile .verified {
+  color: #05396B;
+}
+.editProfile .notverified {
+  background: none;
+  padding: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
 }
 .editProfile .form {
   margin: 2em 0;
@@ -294,6 +332,26 @@
   margin-top: 3em;
 }
 
+.productpage h1 {
+  font-size: 5rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2em;
+}
+.productpage .rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.2em 0.8em;
+  border-radius: 1em;
+}
+.productpage .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
 .productpage .top {
   width: 100%;
   display: flex;
@@ -301,36 +359,65 @@
 }
 .productpage .top .left,
 .productpage .top .right {
+  flex: 1;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
 }
 .productpage .top .left img,
 .productpage .top .right img {
   width: 100%;
+  border-radius: 1em;
 }
 .productpage .top .left .inRight,
 .productpage .top .right .inRight {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 1em;
 }
-.productpage .top .left .inRight p,
+.productpage .top .left .inRight h2, .productpage .top .left .inRight p,
+.productpage .top .right .inRight h2,
 .productpage .top .right .inRight p {
   text-align: left;
   width: 100%;
 }
+.productpage .top .right {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 3em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2em;
+}
+.productpage .actions {
+  flex-wrap: wrap;
+}
 .productpage .prouctdetails {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 3em;
+  margin: 3em 0;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.productpage .prouctdetails .productdetailsIn {
+  flex-wrap: wrap;
 }
 .productpage .prouctdetails .one {
   width: 100%;
-  max-width: 30rem;
+  padding: 1em;
+  max-width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1em;
 }
 .productpage .ownerdetails {
   margin-bottom: 3em;
@@ -347,13 +434,29 @@
 .assignproductpage .form .inp {
   width: 100%;
 }
+.assignproductpage .imageINLIST {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.assignproductpage .list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+html {
+  font-size: 80%;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  outline: blueviolet 1px solid;
 }
 
 .logo {
@@ -363,7 +466,7 @@
   justify-content: center;
 }
 .logo img {
-  transition: 0.4s ease-in-out;
+  transition: 0.2s linear;
 }
 .logo:hover img {
   scale: 1.5;
@@ -372,7 +475,6 @@
 
 .logoimg {
   width: 50px;
-  height: 60px;
 }
 
 body {
@@ -496,4 +598,47 @@ input:focus, textarea:focus {
 
 .errorPage {
   height: 100vh !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#partitioned {
+  padding-left: 15px;
+  letter-spacing: 42px;
+  border: 0;
+  background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 50px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 220px;
+  min-width: 220px;
+}
+
+#divInner {
+  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+#divOuter {
+  width: 190px;
+  overflow: hidden;
+}
+
+.otpinputs {
+  margin-top: 5em !important;
+}
+
+.fullpage {
+  min-height: 100vh;
 }/*# sourceMappingURL=index.css.map */

@@ -26,7 +26,7 @@ export default function AssignProduct() {
             res.data.map(d=>temp.push({
 
                 value:d._id,
-                label:d.username
+                label:<div className='list'><img src={d.avatar} className="imageINLIST"/>{d.username}</div>
             }))
             
             setOptions(temp);

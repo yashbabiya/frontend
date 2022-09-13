@@ -11,8 +11,8 @@ const AuthReducer = (state=initialState,action) =>{
 
         case "LOGIN":
             state = {
-                isLoggedIn:true,
-                ...action.payload
+                ...action.payload,
+                isLoggedIn:true
             }
             localStorage.setItem("userData",JSON.stringify(state))
             return state
@@ -20,6 +20,14 @@ const AuthReducer = (state=initialState,action) =>{
         case "LOGOUT":
             localStorage.removeItem("userData")
             state = initialState
+            return state
+
+        case "VERIFY":
+            state = {
+                ...state,
+                ...action.payload,
+            }
+            localStorage.setItem("userData",JSON.stringify(state))
             return state
 
         default:

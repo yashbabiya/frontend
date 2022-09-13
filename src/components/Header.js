@@ -23,13 +23,7 @@ export default function Header() {
             <Link to="/addProduct">
               <i className="im im-plus-circle"></i>{" "}
             </Link>
-            <Link to="/editProfile">
-              <i
-                className="im im-user-settings
-
-"
-              ></i>
-            </Link>
+            
             <Link to="/queries">
               {" "}
               <i
@@ -37,6 +31,11 @@ export default function Header() {
 
 "
               ></i>{" "}
+            </Link>
+
+            <Link to="/editProfile">
+              
+              <img src={user.avatar} className="profile" alt="" />
             </Link>
           </div>
         </>

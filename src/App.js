@@ -16,6 +16,8 @@ import Product from './pages/Product';
 import EditProduct from './pages/EditProduct';
 import ErrorPage from "./pages/404";
 import AssignProduct from './pages/AssignProduct';
+import OTP from "./pages/OTP";
+import VerifyEmail from './pages/VerifyEmail';
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -38,8 +40,9 @@ function App() {
 
             <Route exact path="/queries" element={<><Header /><Queries /><Footer /></>} />
             <Route exact path="/assignproduct" element={<><Header /><AssignProduct /><Footer /></>} />
+            <Route exact path="/enterOTP" element={<><Header /><OTP /><Footer /></>} />
+            <Route exact path='/emailverificationpage/:token' element={<><VerifyEmail /></>} />
 
-            
             
           </>
         ) : (
@@ -47,7 +50,7 @@ function App() {
             <Route exact path="/login" element={<><Login /></>} />
             <Route exact path="/signup" element={<><Signup /></>} />
             <Route exact path="/sendemail" element={<><SendEmail /></>} />
-            <Route exact path="/changepassword" element={<><ChangePassword /></>} />
+            <Route exact path="/changepassword/:token" element={<><ChangePassword /></>} />
 
           </>
         )}

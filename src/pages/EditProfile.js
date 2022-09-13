@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { API } from "../API";
 import axios from "axios";
 import firebaseUpload from '../helpers/firbaseUpload';
+import logout from "../helpers/logout";
 
 export default function EditProfile() {
   const [img, setImg] = useState();
@@ -15,7 +16,8 @@ export default function EditProfile() {
   const [email,setEmail] = useState();
   const [city,setCity] = useState();
   const [mobile,setMobile] = useState();
-
+  const [emailSent,setEmailSent] = useState(false)
+  const [isLoading,setLoading] = useState(false)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -40,17 +42,33 @@ export default function EditProfile() {
     if (img) setPreview(URL.createObjectURL(img));
   };
 
+  const verifyMobile = () =>{
 
-  const logout = ()=>{
-    dispatch({type:"LOGOUT"})
-    Cookies.remove('rentit')
-    window.location.pathname  = '/'
-    
+    // axios.get('/')
+    navigate('/enterOTP',{state:"Mobile"})
   }
+
+  const verifyEmail = async() =>{
+    // navigate('/enterOTP',{state:"Email"})
+    try{
+
+
+      const res = await axios.get(API+'/auth/send_verification_email',{withCredentials:true})
+      setEmailSent(true)
+    }
+    catch(e){
+        alert("Error",e)
+        console.log(e);
+    }
+  }
+
+
+  
 
 
   const updateUser = async(img=preview) =>{
 
+    setLoading(true)
     const reqData = {
       username,
       email,
@@ -59,12 +77,18 @@ export default function EditProfile() {
       avatar:img
 
     }
-    const res = await axios.put(API+`/user/${user._id}`,reqData,{withCredentials:true}).catch((err)=>alert("error"))
 
-    if(res.status === 200){
-      logout()
+    try{
+
+      const res = await axios.put(API+`/user/${user._id}`,reqData,{withCredentials:true})
+      logout(dispatch)
+      
     }
-
+    catch(e){
+      alert("error")
+    }
+    
+    setLoading(false)
   }
   const handleSubmit = () =>{
 
@@ -92,7 +116,7 @@ export default function EditProfile() {
     <div className="editProfile page">
       <div className="flex-bet">
         <h2>Edit Profile</h2>
-        <button className="red" onClick={()=>logout()}>Logout</button>
+        <button className="red" onClick={()=>logout(dispatch)}>Logout</button>
       </div>
 
       <div className="form">
@@ -119,7 +143,12 @@ export default function EditProfile() {
               <input type="text" value={username} onChange={(e)=>setUsername(e.target.value)}/>
             </div>
             <div className="title">
-              <p>Email : </p>
+              <div className="p flex">Email :
+                <div className="isVerified " title="Verify your email address">
+                 {user.emailverified ? <i className="im im-check-mark-circle verified"></i> :  <button className={emailSent ? `green notverified`: `yellow notverified`} onClick={verifyEmail}> <i className="im im-check-mark-circle"></i>{emailSent ? "Verification Email Sent": "Click to Verify"}</button> }
+                </div>
+                 
+              </div>
               <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </div>
           </div>
@@ -129,7 +158,12 @@ export default function EditProfile() {
               <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
             </div>
             <div className="title">
-              <p>Mobile : </p>
+            <div className="p flex">Mobile :
+                <div className="isVerified " title="Verify your Mobile number ">
+                 {user.mobileverified ? <i className="im im-check-mark-circle verified"></i> : <button className="yellow notverified" onClick={verifyMobile}> <i className="im im-check-mark-circle"></i>Click to Verify</button> }
+                </div>
+                 
+              </div>
               <input type="number" value={mobile} onChange={(e)=>setMobile(e.target.value)}/>
             </div>
           </div>
@@ -137,8 +171,9 @@ export default function EditProfile() {
       </div>
 
       <div className="flex">
-        <button className="blue" onClick={handleSubmit}>Edit Profile</button>
+        <button className="blue" onClick={handleSubmit} disabled={isLoading}>{isLoading ? "Loading ...": "Edit Profile"}</button>
       </div>
     </div>
   );
 }
+
